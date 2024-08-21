@@ -13,8 +13,8 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        otp: ["25.3", "26.1"]
-        rebar3: ['3.22.1']
+        otp: ["25", "26", "27"]
+        rebar3: ["3.22.1"]
         os: [ubuntu-22.04]
     steps:
       - uses: actions/checkout@v4
@@ -37,8 +37,8 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        otp: ["22.3", "23.3", "24.3"]
-        rebar3: ['3.18.0']
+        otp: ["22", "23", "24"]
+        rebar3: ["3.18.0"]
         os: [ubuntu-20.04]
     steps:
       - uses: actions/checkout@v4
@@ -56,5 +56,3 @@ jobs:
       - run: rebar3 xref
       - run: rebar3 eunit
       - run: rebar3 dialyzer
-
-
